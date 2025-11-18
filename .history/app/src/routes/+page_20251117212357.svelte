@@ -209,7 +209,7 @@
 		.table-btn {
 			font-size: 1.5rem;
 			height: 100%;
-			width: 100px;
+			border-radius: 30cap;
 		}
 		.actions {
 			flex-direction: row;

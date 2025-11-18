@@ -209,7 +209,7 @@
 		.table-btn {
 			font-size: 1.5rem;
 			height: 100%;
-			width: 100px;
+			border-radius: 30cap;
 		}
 		.actions {
 			flex-direction: row;
@@ -261,7 +261,7 @@
 		.tables-grid {
 			grid-template-columns: repeat(6, 1fr);
 			width: 100%;
-			gap: 40px;
+			gap: 2px;
 			
 		}
 		.content{

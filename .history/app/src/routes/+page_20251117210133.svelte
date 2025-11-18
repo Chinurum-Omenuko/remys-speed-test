@@ -209,7 +209,7 @@
 		.table-btn {
 			font-size: 1.5rem;
 			height: 100%;
-			width: 100px;
+			border-radius: 30cap;
 		}
 		.actions {
 			flex-direction: row;
@@ -229,64 +229,40 @@
 	@media (min-width: 768px) {
 		.tables-grid {
 			grid-template-columns: repeat(4, 1fr);
-			height: 70%;
+			border: solid 2px green;
 		}
 		.content{
-			height: 50vh;
+			border: solid 2px red;
+			
 		}
 		.table-btn {
 			width: 100px;
 			height: 80px;
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 		.actions {
 			flex-direction: row;
-			gap: 1rem;
-			width: 80%;
-			height: 20vh;
-		}
-		.btn{
-			font-size: 2rem;
+			align-items: stretch;
+			gap: 2rem;
 		}
 	}
 
 	/* 1024px: tablet landscape / small laptop */
-	@media (min-width: 1024px) {
-		.title{
-			font-size: 1.5rem;
-		}
-		.subtitle{
-			font-size: 2rem;
-		}
+	/* @media (min-width: 1024px) {
 		.tables-grid {
-			grid-template-columns: repeat(6, 1fr);
-			width: 100%;
-			gap: 40px;
-			
-		}
-		.content{
-			height: 10%;
-			max-width: 100%;
-			
+			grid-template-columns: repeat(4, 1fr);
 		}
 		.table-btn {
-			max-width: 140px;
-			max-height: 110px;
+			width: 140px;
+			height: 110px;
 			font-size: 2rem;
 		}
 		.actions {
 			flex-direction: row;
 			align-items: center;
 			gap: 1rem;
-			height: 10%;
-			
 		}
-		.btn{
-			width: 20vw;
-			height: 10vh;
-			font-size: 1rem;
-		}
-	}
+	} */
 
 	/* @media (min-width: 1200px) and (max-height: 700px) {
    

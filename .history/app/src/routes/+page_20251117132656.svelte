@@ -56,24 +56,20 @@
 				{/each}
 			</div>
 			<div class="actions">
-				
-				{#if chosenTables.length == 12}
-					<button class="red-btn btn bg-red-500" on:click={allTables}>Deselect All Tables</button>
-				{:else}
-					<button class="blue-btn btn" on:click={allTables}>All Tables</button>
-				{/if}
-				
-				<button class="green-btn btn" on:click={start}>Start</button>
+				<div class="left-actions">
+					{#if chosenTables.length == 12}
+						<button class="blue-btn" on:click={allTables}>Deselect All Tables</button>
+					{:else}
+						<button class="blue-btn" on:click={allTables}>All tables</button>
+					{/if}
+				</div>
+				<button class="green-btn" on:click={start}>Start</button>
 			</div>
 		</div>
 	</div>
 </div>
 
 <style>
-	* {
- 		min-height: 0;
-	}
-
 	.landing-bg {
 
 		
@@ -97,7 +93,7 @@
 		margin-bottom: 1.5rem;
 	}
 	.subtitle {
-		font-size: clamp(1rem, 5vw, 2.5rem);
+		font-size: 2.2rem;
 		font-weight: 100;
 		margin-bottom: 2.5rem;
 		text-align: center;
@@ -138,50 +134,48 @@
 		box-shadow: 0 2px 8px rgba(0,0,0,0.04);
 	}
 	.table-btn.selected {
-		border: 3px solid #2e5eaa;
+		border: 1px solid #2e5eaa;
 		background: #eaf1ff;
 		color: #2e5eaa;
 	}
 	.actions {
 		display: flex;
 		justify-content: space-between;
-		align-items: stretch;
+		align-items: flex-end;
 		max-width: 1200px;
-		min-width: 50%;
 		margin: 2rem auto 0 auto;
-		flex-direction: row;
-
 	}
-
-	.btn {
-		width: 80%;
-		height: 50%;
-		color: #fff;
-		border-radius: 12px;
-		padding: 1rem 2.5rem;
-		cursor: pointer;
-		margin-bottom: 0.5rem;
-		display: -webkit-box;
-		-webkit-line-clamp: 1; /* number of lines */
-		-webkit-box-orient: vertical;
-		overflow: hidden;
-		white-space: nowrap;
-		text-overflow: ellipsis;
+	.left-actions {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
 	}
 	.blue-btn {
-		background:  #3576d1;
+		background: linear-gradient(180deg, #5faaff 0%, #3576d1 100%);
+		color: #fff;
+		font-size: 1.7rem;
+		font-weight: 600;
 		border: none;
+		border-radius: 12px;
+		padding: 1rem 2.5rem;
 		box-shadow: 0 4px 0 #2b5ca7;
+		cursor: pointer;
+		margin-bottom: 0.5rem;
 		transition: background 0.2s;
-		font-size: 1em;
 	}
 	.blue-btn:active {
 		background: #3576d1;
 	}
 	.green-btn {
-		background: #8dbf2e;
+		background: linear-gradient(180deg, #b6e36b 0%, #8dbf2e 100%);
+		color: #fff;
+		font-size: 2rem;
+		font-weight: 700;
 		border: none;
+		border-radius: 12px;
+		padding: 1rem 3rem;
 		box-shadow: 0 4px 0 #6b8e23;
+		cursor: pointer;
 		margin-left: 1rem;
 		transition: background 0.2s;
 	}
@@ -190,103 +184,57 @@
 	}
 
 	/* 640px: small tablet */
-	@media (min-width: 340px) and (max-width: 640px){
-		.content{
-			height: 70vh;
-			display: flex;
-			flex-direction: column;
-			justify-content: space-around;
-			
-		}
-		.title{
-			font-size: 20px;
-		}
-		.tables-grid {
-			grid-template-columns: repeat(2, 1fr);
-			height: 100%;
-			
-		}
-		.table-btn {
-			font-size: 1.5rem;
-			height: 100%;
-			width: 100px;
-		}
-		.actions {
-			flex-direction: row;
-			align-items: stretch;
-			gap: 2rem;
-			width: 80vw;
-			height: 30%;
-		}
-	}
-	@media (min-width: 640px) {
+	/* @media (min-width: 640px) {
 		.tables-grid {
 			grid-template-columns: repeat(3, 1fr);
-		}
-	}
-
-	/* 768px: tablet portrait */
-	@media (min-width: 768px) {
-		.tables-grid {
-			grid-template-columns: repeat(4, 1fr);
-			height: 70%;
-		}
-		.content{
-			height: 50vh;
+			border: red;
 		}
 		.table-btn {
 			width: 100px;
 			height: 80px;
-			font-size: 2rem;
+			font-size: 1.5rem;
 		}
 		.actions {
-			flex-direction: row;
-			gap: 1rem;
-			width: 80%;
-			height: 20vh;
-		}
-		.btn{
-			font-size: 2rem;
+			flex-direction: column;
+			align-items: stretch;
+			gap: 2rem;
 		}
 	}
 
-	/* 1024px: tablet landscape / small laptop */
-	@media (min-width: 1024px) {
-		.title{
-			font-size: 1.5rem;
-		}
-		.subtitle{
-			font-size: 2rem;
-		}
+	/* 768px: tablet portrait */
+	/* @media (min-width: 768px) {
 		.tables-grid {
-			grid-template-columns: repeat(6, 1fr);
-			width: 100%;
-			gap: 40px;
-			
-		}
-		.content{
-			height: 10%;
-			max-width: 100%;
-			
+			grid-template-columns: repeat(3, 1fr);
+			border: red;
 		}
 		.table-btn {
-			max-width: 140px;
-			max-height: 110px;
+			width: 100px;
+			height: 80px;
+			font-size: 1.5rem;
+		}
+		.actions {
+			flex-direction: column;
+			align-items: stretch;
+			gap: 2rem;
+		}
+	} */
+
+	/* 1024px: tablet landscape / small laptop */
+	/* @media (min-width: 1024px) {
+		.tables-grid {
+			grid-template-columns: repeat(4, 1fr);
+		}
+		.table-btn {
+			width: 140px;
+			height: 110px;
 			font-size: 2rem;
 		}
 		.actions {
 			flex-direction: row;
 			align-items: center;
 			gap: 1rem;
-			height: 10%;
-			
 		}
-		.btn{
-			width: 20vw;
-			height: 10vh;
-			font-size: 1rem;
-		}
-	}
+	} */
 
 	/* @media (min-width: 1200px) and (max-height: 700px) {
    

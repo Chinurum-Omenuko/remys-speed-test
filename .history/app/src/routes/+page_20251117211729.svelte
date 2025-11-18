@@ -209,7 +209,7 @@
 		.table-btn {
 			font-size: 1.5rem;
 			height: 100%;
-			width: 100px;
+			border-radius: 30cap;
 		}
 		.actions {
 			flex-direction: row;
@@ -252,22 +252,15 @@
 
 	/* 1024px: tablet landscape / small laptop */
 	@media (min-width: 1024px) {
-		.title{
-			font-size: 1.5rem;
-		}
-		.subtitle{
-			font-size: 2rem;
-		}
 		.tables-grid {
 			grid-template-columns: repeat(6, 1fr);
 			width: 100%;
-			gap: 40px;
-			
+			border: solid 2px green;
 		}
 		.content{
-			height: 10%;
-			max-width: 100%;
-			
+			height: 20%;
+			max-width: 70%;
+			border: solid 2px red;
 		}
 		.table-btn {
 			max-width: 140px;
@@ -278,13 +271,6 @@
 			flex-direction: row;
 			align-items: center;
 			gap: 1rem;
-			height: 10%;
-			
-		}
-		.btn{
-			width: 20vw;
-			height: 10vh;
-			font-size: 1rem;
 		}
 	}
 

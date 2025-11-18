@@ -209,6 +209,7 @@
 		.table-btn {
 			font-size: 1.5rem;
 			height: 100%;
+			border-radius: 30cap;
 			width: 100px;
 		}
 		.actions {
